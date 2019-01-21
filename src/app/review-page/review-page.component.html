@@ -1,0 +1,76 @@
+<!-- spacing -->
+<div style="height: 30px;"></div>
+
+<!-- Previous Button -->
+<div class="nav-buttons" style="text-align: left;">
+  <button class="nav-button edit-button" routerLink="/form">Edit</button>
+</div>
+
+<div class="total-info">
+  Total Registers:
+  <span *ngIf="registers.length != undefined">{{registers.length}}</span>
+  <span *ngIf="registers.length == undefined">0</span>
+</div>
+
+<form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)">
+  <div class="checkout">
+    <!-- spacing -->
+    <div style="height: 25px;"></div>
+
+    <table class="Tablecontainer">
+      <tr class="Tablerow">
+        <th class="col-md-4">Name</th>
+        <th class="col-md-2">Age</th>
+        <th class="col-md-4">Days Attending</th>
+        <th class="col-md-2">Cost</th>
+      </tr>
+      <tr *ngFor="let attendee of registers" class="Tablerow">
+        <td class="col-md-4">{{attendee.first_name}} {{attendee.last_name}}
+          <br>Gender: {{attendee.gender}}
+          <br>Shirt Size: {{attendee.t_shirt}}</td>
+        <td class="col-md-2">{{attendee.age}}</td>
+        <td class="col-md-4">{{attendee.days_attending}}</td>
+        <td class="col-md-2">{{attendee.cost | currency }}</td>
+    </table>
+   
+      <div class="FormFieldContainer">
+        <label class="discount-label">Discount Code</label>
+        <input #discount class="discount" id="discount" type="text" placeholder="Enter Promo Code" name="discount" (keyup)="checkDiscount(discount.value)">
+       </div>    
+      <div class="cost-info">Sub-Total: ${{original_cost}}</div>
+      <div class="cost-info">Discount: - ${{cost_diff}}</div>
+      <div class="cost-info">Total: ${{total_cost}}</div>
+  </div>
+
+      <!-- spacing  -->
+      <div style="height: 30px;"></div>
+  <div class="payment-title">Payment</div>
+
+
+  <div class="checkout">
+    <div style="height: 20px;"></div>
+    <label for="card-info" id="card-title">Card Information</label>
+    <div class="CardRow">
+      <div id="card-info" #cardInfo></div>
+
+      <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+    </div>
+
+    <label class="email-info">Email For Receipt</label>
+    <div class='CardRow row'>
+      <div class="EmailGroup">
+        <input #email (keyup)="onKey(email.value)" id="email" name="email" class="email-field" placeholder="jane.doe@example.com" ngModel
+          email required/>
+      </div>
+    </div>
+    <div style="height: 30px;"></div>
+  </div>
+
+  <button [disabled]='isDisabled()' class="primary-button pay-button" type="submit">Pay {{total_cost | currency}}</button>
+
+  <!-- spacing -->
+  <div style="height: 200px;"></div>
+
+</form>
+
+<p *ngIf="loading === true">Loading...</p>

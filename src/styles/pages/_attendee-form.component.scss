@@ -1,0 +1,72 @@
+
+
+.checkbox {
+    padding-left: 15px;
+} 
+
+// Pagination
+// Add and delete buttons for pagination
+#add-entry-box {
+    background-color: $lightest-bg-color;
+    border-color: $bg-color;
+    padding: 4px 8px;
+}
+.DeleteButton {
+    border-radius: 50%;
+    padding: 0;
+    margin-left: -25px;
+    top: -7px;
+    position: relative;
+    z-index: 9999;
+    background-color: red;
+    color: white;
+    width: 17px;
+    height: 17px;
+    line-height: 5px;
+}
+
+.add-entry {
+    color: $bg-color;
+}
+
+.pagination>.active>.pagination-button,
+.pagination>.active>a {
+    color: $white;
+    background-color: $bg-color;
+    border-color: $bg-color;
+    border-radius: 30px;
+}
+
+.pagination>li>.pagination-button,
+.pagination>li>a {
+    position: relative;
+    float: left;
+    padding: 9px 16px;
+    margin-right: 10px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 16px;
+    border-color: $bg-color;
+    max-width: 100%;
+    z-index: 0;
+}
+
+.pagination>li>.pagination-button:hover,
+.pagination>li>.pagination-button:focus,
+.pagination>li>a:hover,
+.pagination>li>a:focus {
+    color: #fff;
+    background-color: $bg-color;
+    border-color: $bg-color;
+    cursor: pointer;
+}
+// End of pagination
+
+// Removes the up and down buttons for number fields    
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

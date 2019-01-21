@@ -1,0 +1,228 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "~bootflat/bootflat/scss/bootflat";
+@import "colors";
+@import "pages/attendee-form.component.scss";
+@import "pages/review-page.component.scss";
+@import "pages/thankyoupage.component.scss";
+
+* {
+    font-family: 'Song Myung', serif;
+}
+
+// Closed Registration Styles
+.ClosedRegistration {
+    color: $red;
+    font-size: 30px;
+    text-align: center;
+}
+
+.ClosedRegistrationContainer {
+    padding-top: 50px;
+}
+
+// Generic page styling
+.page-border {
+    @extend .offset-md-3;
+    @extend .col-md-6;
+    margin-bottom: 25px;
+}
+
+.page-header {
+    text-align: center;
+    background-color: $bg-color;
+    @extend .offset-md-0;
+    @extend .col-md-12;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: white;
+}
+
+.page {
+    background-color: $white;
+    height: 200%;
+}
+
+.checkout {
+    background-color: $light-bg-color !important;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 15px;
+    border: solid $bg-color;
+    border-width: 2px;
+    border-style: outset;
+    border-image: initial;
+}
+
+.WarningTextColor{
+    color: $warning-text-color;
+}
+
+// Titles
+.title-container {
+    margin-top: 1.75rem;
+    padding-bottom: 35px;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 1.8rem;
+    padding-left: 0;
+    width: 19rem;
+    border-bottom: 4px solid $bg-color;
+}
+
+.total-info {
+    @extend .offset-md-6;
+    font-weight: 400;
+    font-size: x-large;
+    margin-bottom: 20px;
+    text-align: right;
+    span {
+        font-weight: 600;
+        font-size: 2rem;
+        color: $bg-color;
+        margin-left: 20px;
+    }
+}
+
+// Buttons
+.submit-button-container { //may not be using
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 100px;
+}
+
+.NavButton {
+    @extend .primary-button;
+    float: unset;
+    vertical-align: middle;
+    position: relative;
+    font-weight: unset;
+    border: solid $bg-color;
+    border-width: 2px;
+    border-style: outset;
+    border-image: initial;
+    font-size: 1.3rem;
+    margin-right: unset;
+    .NavButton:hover {
+        @extend .primary-button:hover;
+    }
+}
+
+// Form Control
+.FormFieldContainer {
+    @extend .form-group;
+    @extend .col-md-12;
+}
+
+.MediumFormFieldContainer {
+    @extend .form-group;
+    @extend .col-md-6;
+}
+
+.SmallFormFieldContainer {
+    @extend .form-group;
+    @extend .col-md-4;
+}
+
+.form-group{
+    background-color: $light-bg-color !important;
+    
+    input,
+    select,
+    textarea {
+        background-color: $lightest-bg-color !important;
+    }
+    border: 0 !important;
+    .ng-valid[required],
+    .ng-valid.required {
+        border-left: 5px solid $green !important;
+        /* green */
+    }
+    .ng-invalid:not(form) {
+        border-left: 5px solid $red !important;
+        /* red */
+    }
+    .non-required {
+        border-left: 5px solid $green !important;
+        /* green */
+    }
+}
+
+.FormRow {
+    @extend .row;
+    background-color: $light-bg-color;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid $green;
+    /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid $red;
+    /* red */
+}
+
+.non-required {
+    border-left: 5px solid $green !important;
+    /* green */
+}
+// End of form control
+
+.icheckbox_flat {
+    background-image: url("../assets/check_flat/default.png") !important;
+}
+
+// Nav buttons between form and review page
+.nav-buttons {
+    display: block;
+    text-align: center;
+    .nav-button.active {
+        color: $white;
+        background-color: $bg-color;
+        border: none;
+    }
+    .nav-button {
+        padding: 9px 16px;
+        margin-right: 10px;
+        line-height: 1.42857143;
+        border-radius: 30px;
+        font-size: 16px;
+        border-color: $bg-color;
+        width: 200px;
+        background-color: $lightest-bg-color;
+    }
+    .nav-button:hover,
+    .nav-button:focus {
+        color: $white;
+        background-color: $bg-color;
+        border-color: $bg-color;
+    }
+    .nav-button-active {
+        color: $white;
+        background-color: $bg-color;
+        border-color: $bg-color;
+    }
+    .next-button {
+        float: right;
+        margin-bottom: 50px;
+    }
+    .edit-button {
+        margin-bottom: 15px;
+    }
+}
+
+// Final container containing links after registration is complete/expired
+.LinkContainer {
+    padding-top: 10%;
+    padding-bottom: 20%;
+    margin-left: 15%;
+}
+
+.LinkButton {
+    @extend .col-md-6;
+    padding-bottom: 10%;
+}

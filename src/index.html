@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<div class="page">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Insert Camp Name Registration Form</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="page">
+      <app-root></app-root>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+      // var stripe = Stripe('pk_live_your-key'); // publishable live key
+      var stripe = Stripe('pk_test_your-key'); // publishable test key
+      var elements = stripe.elements();
+    </script>
+  </body>
+
+</html>
