@@ -16,43 +16,43 @@ Make sure to have the following:
 Here's a big list of things you'll have to rename/add/comment out:
 1. src/app/app.component.html
 
-⋅⋅⋅Line 8: Add a link to your camp logo, or comment out this line.⋅⋅
-⋅⋅⋅Line 10: Add your theme verse.⋅⋅
+   Line 8: Add a link to your camp logo, or comment out this line.  
+   Line 10: Add your theme verse.  
 
 2. src/app/app.component.ts
 
-⋅⋅⋅Line 9: Add your firestore/firebase config information to the config variable.⋅⋅
-⋅⋅⋅Line 24: Add your Camp Title and Year.⋅⋅
+   Line 9: Add your firestore/firebase config information to the config variable.  
+   Line 24: Add your Camp Title and Year.  
 
 3. src/app/attendee-form/attendee-form.component.html
 
-⋅⋅⋅Line 9: Add your Org's Facebook link.⋅⋅
-⋅⋅⋅Line 14: Add your Org's Website link.⋅⋅
-⋅⋅⋅Line 15: Add your Org's name.⋅⋅
-⋅⋅⋅Line 37 (Optional, for testing): Uncomment out the button for easy testing of the app's code.⋅⋅
+   Line 9: Add your Org's Facebook link.  
+   Line 14: Add your Org's Website link.  
+   Line 15: Add your Org's name.  
+   Line 37 (Optional, for testing): Uncomment out the button for easy testing of the app's code.  
 
 4. src/app/attendee-form/attendee-form.component.ts
 
-⋅⋅⋅Line 68: Add list of churches that commonly attend your camp.⋅⋅
+   Line 68: Add list of churches that commonly attend your camp.  
 
 5. src/app/review-page/review-page.component.ts
 
-⋅⋅⋅Line 35: Add in your discount URL from Webtask.io.⋅⋅
-⋅⋅⋅Line 38: Add your production URL from Webtask.io.⋅⋅
-⋅⋅⋅Line 40: Add your test URL from Webtask.io.⋅⋅
+   Line 35: Add in your discount URL from Webtask.io.  
+   Line 38: Add your production URL from Webtask.io.  
+   Line 40: Add your test URL from Webtask.io.  
 
 6. src/app/thankyoupage/thankyoupage.component.html
 
-⋅⋅⋅Line 9: Add contact email.⋅⋅
-⋅⋅⋅Line 16: Add your Org's Facebook link.⋅⋅
-⋅⋅⋅Line 21: Add your Org's Website link.⋅⋅
-⋅⋅⋅Line 22: Add your Org's name.⋅⋅
+   Line 9: Add contact email.  
+   Line 16: Add your Org's Facebook link.  
+   Line 21: Add your Org's Website link.  
+   Line 22: Add your Org's name.  
 
 7. src/index.html
 
-⋅⋅⋅Line 7: Add your Camp Name into the title.⋅⋅
-⋅⋅⋅Line 20: Add your publishable live key from Stripe API.⋅⋅
-⋅⋅⋅Line 21: Add your publishable test key from Stripe API.⋅⋅
+   Line 7: Add your Camp Name into the title.  
+   Line 20: Add your publishable live key from Stripe API.  
+   Line 21: Add your publishable test key from Stripe API.  
 
 ## Development server
 
