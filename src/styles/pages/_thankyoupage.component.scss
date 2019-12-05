@@ -1,8 +1,3 @@
-//Thank you page
-.h3 {
-    padding-top: 200px;
-}
-
 .ty-header {
     text-align: center;
     padding-top: 20px;
@@ -10,6 +5,29 @@
 }
 
 .ty-info {
+    font-size: 1.3rem;
     text-align: center;
-    padding-top: 20px;
+    margin: 40px 0;
+}
+
+.ty-footer {
+    font-size: 1em;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.link-container {
+    margin: 50px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    a {
+        color: $white;
+        border-radius: 15px;
+        padding: 10px 40px 10px 40px;
+        text-align: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
 }

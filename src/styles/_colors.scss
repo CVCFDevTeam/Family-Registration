@@ -1,17 +1,37 @@
-// Colors
+/**
+ * Define colors variables
+ */
 
-// Global
-$lightest-bg-color: #fff0e8;
-$light-bg-color: #ffdac4;
-$bg-color: #f36f24;
+$primary: #3880ff;
+$primary-shade: #3171e0;
+$primary-tint: #4c8dff;
 
-$warning-text-color: #a94442;
+$secondary: #0cd1e8;
+$secondary-shade: #0bb8cc;
+$secondary-tint: #24d6ea;
 
-// Form Field Status
+$success: #10dc60;
+$success-shade: #0ec254;
+$success-tint: #28e070;
+
+$warning: #ffce00;
+$warning-shade: #e0b500;
+$warning-tint: #ffd31a;
+
+$danger: #f04141;
+$danger-shade: #d33939;
+$danger-tint: #f25454;
+
+$dark: #222428;
+$dark-shade: #1e2023;
+$dark-tint: #383a3e;
+
+$medium: #989aa2;
+$medium-shade: #86888f;
+$medium-tint: #a2a4ab;
+
+$light: #f4f5f8;
+$light-shade: #d7d8da;
+$light-tint: #f5f6f9;
+
 $white: #fff;
-$green: #42A948;
-$red: #a94442;
-
-// Disabled
-$disabled-color-bg: #fff5f0;
-$disabled-color-text: rgb(138, 138, 138);

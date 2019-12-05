@@ -21,7 +21,11 @@ export class Attendee {
         public your_church_point_of_contact_name: string,
         public your_church_point_of_contact_number: string,
         public days_attending: string,
-        public cost: number
+        public cost: number,
+        public discount: string,
+        public paid_status: string,
+        public checked_in: boolean,
+        public time_registered: string
     ) {
     }
 

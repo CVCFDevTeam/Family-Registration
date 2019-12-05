@@ -1,39 +1,18 @@
-
-// Payment button styling
-.pay-button {
-    margin-top: 30px;
+/******* Review page table *********/
+.table-container {
+    @extend .col-md-12;
 }
 
-.primary-button {
-    padding: 9px 16px;
-    margin-right: 10px;
-    line-height: 1.42857143;
-    border-radius: 30px;
-    font-size: 1.5rem;
-    border-color: $bg-color;
-    width: 200px;
-    background-color: $lightest-bg-color;
-    float: right;
-    font-weight: bold;
-    color: black;
+.table-row {
+    padding: 10px 0;
+    border-bottom: 1pt solid $medium;
+    word-wrap: break-word;
 }
 
-.primary-button:disabled,
-.primary-button[disabled],
-.primary-button[disabled]:hover {
-    @extend .primary-button;
-    background-color: $disabled-color-bg;
-    color: $disabled-color-text;
-    border-color: $disabled-color-bg;
-}
+/******* End of Review page table *********/
 
-.primary-button:hover {
-    color: $white;
-    background-color: $bg-color;
-    border-color: $bg-color;
-}
+/********** Payment and discount info **********/
 
-// Payment and discount info
 .discount-label {
     text-align: left;
     font-weight: bold;
@@ -54,55 +33,62 @@
     line-height: 1.42857143;
     border-radius: 10px;
     font-size: 1rem;
-    border-color: $bg-color; // background-color: $lightest-bg-color;
+    border-color: $medium;
+    box-shadow: none;
     float: left;
     clear: left;
     font-weight: bold;
-    color: black;
+    color: $dark;
+
     .ng-valid[required],
     .ng-valid.required {
-        border-left: 5px solid $green !important;
+        border-left: 5px solid $success !important;
         margin-left: 5px;
-        /* green */
     }
     .ng-invalid:not(form) {
-        border-left: 5px solid yellow !important;
+        border-left: 5px solid $warning !important;
         margin-left: 5px;
-        /* yellow */
     }
     .non-required {
-        border-left: 5px solid $green !important;
+        border-left: 5px solid $success !important;
         margin-left: 5px;
-        /* green */
     }
 }
-// End of payment and discount info
 
-// Card Formatting
+/********** End of payment and discount info **********/
+
+/********** Payment **********/
+
+.payment-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
 .StripeElement {
     display: block;
     background-color: white;
     padding: 8px 12px;
     border-radius: 4px;
     border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #212529;
+    box-shadow: 0 1px 3px 0 $dark;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
 }
 
 .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 $bg-color;
+    box-shadow: 0 1px 3px 0 $dark;
 }
 
 .StripeElement--invalid {
-    border-color: #fa755a;
+    border-color: $danger;
 }
 
 .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
 }
 
-.CardRow {
+.card-row {
     @extend .col-md-12;
 }
 
@@ -111,10 +97,7 @@
     display: block;
     font-weight: bold;
 }
-// End of Card formatting 
 
-
-// Email Styling
 .email-info {
     text-align: center;
     display: block;
@@ -122,23 +105,22 @@
     margin-top: 20px;
 }
 
-.EmailGroup {
+.email-container {
     @extend .col-md-12;
     background-color: $white !important;
     display: inline-flex;
     padding: 5px 12px;
     border-radius: 4px;
     border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #212529;
+    box-shadow: 0 1px 3px 0 $dark;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
-    background: transparent;
     width: 105%;
     margin-left: 15px;
 }
 
-.EmailGroup:focus {
-    box-shadow: 0 1px 3px 0 $bg-color;
+.email-container:focus {
+    box-shadow: 0 1px 3px 0 $dark;
 }
 
 .email-field {
@@ -146,27 +128,10 @@
     background: transparent;
     font-weight: 300;
     border: 0;
-    color: #31325F;
+    color: #31325f;
     outline: none;
     padding-right: 10px;
     padding-left: 10px;
     cursor: text;
 }
-// End of Email Styling
-
-// Review page table 
-.Tablecontainer {
-    @extend .col-md-12;
-}
-
-.Tablerow {
-    padding: 10px 0px;
-    border-bottom: 1pt solid $bg-color;
-    word-wrap: break-word;
-}
-
-.payment-title {
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-}
+/********** End of Payment **********/

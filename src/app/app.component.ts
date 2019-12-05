@@ -1,40 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import firestore from 'firebase/firestore';
 
-const settings = { 
-  ssl: true,
-  timestampsInSnapshots: true 
+
+const settings = {
+    ssl: true,
+    timestampsInSnapshots: true
 };
+
+
 const config = {
-  apiKey: "YOUR KEY",
-  authDomain: "your-domain.firebaseapp.com",
-  databaseURL: "https://your-database-url.firebaseio.com",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket.appspot.com",
-  messagingSenderId: "your-messaging-sender-id"
+    apiKey: '<firebase api key>',
+    authDomain: '<firebase auth domain>',
+    databaseURL: '<firebase db url>',
+    projectId: '<firebase project id>',
+    storageBucket: '<firebase storage bucket>',
+    messagingSenderId: '<firebase messaging sender id>'
 };
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+    selector: 'app-root',
+    templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  titleOne = 'Camp Name and Year';
-  titleTwo = 'Registration Form';
-  page = 'attendeesFormPage';
+    titleOne = '<Title of the Registration Form>';
+    titleTwo = '<Theme>';
+    themeVerse = '<Theme verse>';
+    themeVerseReference = '<Theme verse reference>';
 
-  constructor(){
+    page = 'attendeesFormPage';
 
-  }
+    constructor() {
 
-  ngOnInit() {
-    firebase.initializeApp(config);
-    firebase.firestore().settings(settings);
-  }
+    }
 
-  switchPage(page){
-    this.page = page;
-  }
+    ngOnInit() {
+        firebase.initializeApp(config);
+        firebase.firestore().settings(settings);
+    }
+
+    switchPage(page) {
+        this.page = page;
+    }
 }

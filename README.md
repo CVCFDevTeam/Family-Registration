@@ -94,7 +94,7 @@ the URL. Users must always navigate to the base url of the Github Pages site for
 
 ## Test Our Version
 
-Feel free to navigate to https://johnlha.github.io to see our current design in action. 
+Feel free to navigate to https://johnlha.github.io to test out the current design. 
 
 For test payment, use: 
 1. card number: 4242 4242 4242 4242

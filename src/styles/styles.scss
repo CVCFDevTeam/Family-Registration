@@ -1,18 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
-@import "~bootflat/bootflat/scss/bootflat";
 @import "colors";
 @import "pages/attendee-form.component.scss";
 @import "pages/review-page.component.scss";
 @import "pages/thankyoupage.component.scss";
+@import "~ngx-toastr/toastr.css";
 
-* {
-    font-family: 'Song Myung', serif;
-}
-
-// Closed Registration Styles
+/*************** Closed Registration Styles ***************/
 .ClosedRegistration {
-    color: $red;
+    color: $danger;
     font-size: 30px;
     text-align: center;
 }
@@ -21,7 +17,20 @@
     padding-top: 50px;
 }
 
-// Generic page styling
+/*************** Generic page styling ***************/
+html,
+body {
+    background-color: $light;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+}
+
+.page {
+    background-color: $light;
+    height: 100%;
+}
+
 .page-border {
     @extend .offset-md-3;
     @extend .col-md-6;
@@ -29,200 +38,191 @@
 }
 
 .page-header {
-    text-align: center;
-    background-color: $bg-color;
     @extend .offset-md-0;
     @extend .col-md-12;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    color: white;
-}
+    padding: 20px;
+    text-align: center;
+    color: $dark;
 
-.page {
-    background-color: $white;
-    height: 200%;
-}
+    .page-header-title {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
 
-.checkout {
-    background-color: $light-bg-color !important;
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 15px;
-    border: solid $bg-color;
-    border-width: 2px;
-    border-style: outset;
-    border-image: initial;
-}
+        a {
+            color: $dark;
+            text-decoration: none !important;
+        }
+    }
 
-.WarningTextColor{
-    color: $warning-text-color;
-}
+    .page-header-subtitle {
+        font-size: 1.2rem;
+    }
 
-// Titles
-.title-container {
-    margin-top: 1.75rem;
-    padding-bottom: 35px;
-}
-
-.title {
-    font-weight: 400;
-    font-size: 1.8rem;
-    padding-left: 0;
-    width: 19rem;
-    border-bottom: 4px solid $bg-color;
-}
-
-.total-info {
-    @extend .offset-md-6;
-    font-weight: 400;
-    font-size: x-large;
-    margin-bottom: 20px;
-    text-align: right;
-    span {
-        font-weight: 600;
-        font-size: 2rem;
-        color: $bg-color;
-        margin-left: 20px;
+    .page-header-text {
+        font-size: 1rem;
+        font-weight: 300;
     }
 }
 
-// Buttons
-.submit-button-container { //may not be using
-    text-align: right;
-    margin-right: 50px;
-    margin-bottom: 100px;
-}
+/* Form Titles */
+.form-title-container {
+    margin: 5rem 0 30px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 
-.NavButton {
-    @extend .primary-button;
-    float: unset;
-    vertical-align: middle;
-    position: relative;
-    font-weight: unset;
-    border: solid $bg-color;
-    border-width: 2px;
-    border-style: outset;
-    border-image: initial;
-    font-size: 1.3rem;
-    margin-right: unset;
-    .NavButton:hover {
-        @extend .primary-button:hover;
+    .title {
+        background-color: $dark;
+        color: $light;
+        text-align: center;
+        border-radius: 15px;
+        font-weight: 400;
+        font-size: 1.5rem;
+        width: 19rem;
+
+        p {
+            margin: 2px 0;
+        }
+    }
+
+    .total-info {
+        font-weight: 400;
+        font-size: 1.5rem;
+        text-align: right;
+
+        span {
+            font-weight: 600;
+            font-size: 2rem;
+            color: $success;
+            margin-left: 20px;
+        }
     }
 }
 
-// Form Control
-.FormFieldContainer {
+/* account for other small screen sizes */
+@media all and (max-width: 1100px) {
+    .form-title-container {
+        justify-content: space-around;
+
+        .title {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/************ Form Control ***************/
+.form-field-container {
     @extend .form-group;
     @extend .col-md-12;
 }
 
-.MediumFormFieldContainer {
+.md-form-field-container {
     @extend .form-group;
     @extend .col-md-6;
 }
 
-.SmallFormFieldContainer {
+.sm-form-field-container {
     @extend .form-group;
     @extend .col-md-4;
 }
 
-.form-group{
-    background-color: $light-bg-color !important;
-    
+.form-group {
+    background-color: $white !important;
+
     input,
     select,
     textarea {
-        background-color: $lightest-bg-color !important;
+        background-color: $white !important;
     }
     border: 0 !important;
     .ng-valid[required],
     .ng-valid.required {
-        border-left: 5px solid $green !important;
+        border-left: 5px solid $success !important;
         /* green */
     }
     .ng-invalid:not(form) {
-        border-left: 5px solid $red !important;
+        border-left: 5px solid $danger !important;
         /* red */
     }
     .non-required {
-        border-left: 5px solid $green !important;
+        border-left: 5px solid $success !important;
         /* green */
     }
 }
 
-.FormRow {
+.form-row {
     @extend .row;
-    background-color: $light-bg-color;
+    background-color: inherit;
 }
 
 .ng-valid[required],
 .ng-valid.required {
-    border-left: 5px solid $green;
-    /* green */
+    border-left: 5px solid $success;
 }
 
 .ng-invalid:not(form) {
-    border-left: 5px solid $red;
-    /* red */
+    border-left: 5px solid $danger;
 }
 
 .non-required {
-    border-left: 5px solid $green !important;
-    /* green */
-}
-// End of form control
-
-.icheckbox_flat {
-    background-image: url("../assets/check_flat/default.png") !important;
+    border-left: 5px solid $success !important;
 }
 
-// Nav buttons between form and review page
+/************ End of Form Control ***************/
+
+/* Nav buttons between form and review page */
 .nav-buttons {
     display: block;
     text-align: center;
+
     .nav-button.active {
         color: $white;
-        background-color: $bg-color;
+        background-color: $success;
         border: none;
     }
+
     .nav-button {
         padding: 9px 16px;
         margin-right: 10px;
         line-height: 1.42857143;
         border-radius: 30px;
         font-size: 16px;
-        border-color: $bg-color;
         width: 200px;
-        background-color: $lightest-bg-color;
+        background-color: $success;
+        color: $white;
+        -webkit-appearance: button;
     }
+
     .nav-button:hover,
     .nav-button:focus {
         color: $white;
-        background-color: $bg-color;
-        border-color: $bg-color;
+        background-color: $success-shade;
+        border: none;
     }
+
     .nav-button-active {
         color: $white;
-        background-color: $bg-color;
-        border-color: $bg-color;
+        background-color: $success;
+        border: none;
     }
+
     .next-button {
         float: right;
         margin-bottom: 50px;
     }
-    .edit-button {
-        margin-bottom: 15px;
+
+    .next-button:disabled,
+    .next-button[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
     }
-}
 
-// Final container containing links after registration is complete/expired
-.LinkContainer {
-    padding-top: 10%;
-    padding-bottom: 20%;
-    margin-left: 15%;
-}
-
-.LinkButton {
-    @extend .col-md-6;
-    padding-bottom: 10%;
+    .edit-button {
+        background-color: transparent;
+        border: 1px solid $dark;
+        color: $dark;
+    }
 }
