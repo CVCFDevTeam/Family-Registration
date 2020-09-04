@@ -29,7 +29,7 @@
         "google-auth-library": "^1.6.1",
         "ngx-spinner": "^7.1.4",
         "ngx-toastr": "^10.0.2",
-        "node-sass": "^4.13.0",
+        "node-sass": "^4.13.1",
         "rxjs": "^6.2.1",
         "stripe": "^6.2.1",
         "url-parse": "^1.4.3",
